@@ -5,18 +5,31 @@ class Person {
     private String pesel;
 
     public Person(String firstName, String lastName, int age, String pesel) throws NameUndefinedException, IncorrectAgeException {
-        checkPreconditions(firstName, lastName, age);
+        checkFirstName(firstName);
+        checkLastName(lastName);
+        checkAge(age);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.pesel = pesel;
     }
 
-    private void checkPreconditions(String firstName, String lastName, int age) throws NameUndefinedException, IncorrectAgeException {
-        if (firstName == null || lastName == null
-                || firstName.length() < 3 || lastName.length() < 3) {
+    public Person() {
+    }
+
+    private void checkFirstName(String firstName) throws NameUndefinedException {
+        if (firstName == null || firstName.length() < 3) {
             throw new NameUndefinedException();
         }
+    }
+
+    private void checkLastName(String lastName) throws NameUndefinedException {
+        if (lastName == null || lastName.length() < 3) {
+            throw new NameUndefinedException();
+        }
+    }
+
+    private void checkAge(int age) throws IncorrectAgeException {
         if (age < 1) {
             throw new IncorrectAgeException();
         }
@@ -26,7 +39,8 @@ class Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) throws NameUndefinedException {
+        checkFirstName(firstName);
         this.firstName = firstName;
     }
 
@@ -34,7 +48,8 @@ class Person {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastName) throws NameUndefinedException {
+        checkLastName(lastName);
         this.lastName = lastName;
     }
 
@@ -42,7 +57,8 @@ class Person {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws IncorrectAgeException {
+        checkAge(age);
         this.age = age;
     }
 

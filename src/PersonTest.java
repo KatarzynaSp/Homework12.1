@@ -4,19 +4,22 @@ public class PersonTest {
     public static void main(String[] args) throws NameUndefinedException, IncorrectAgeException {
         Scanner input = new Scanner(System.in);
 
-        try {  System.out.println("Podaj imię");
-            String firstName = input.nextLine();
-            System.out.println("Podaj nazwisko");
-            String lastName = input.nextLine();
-            System.out.println("Podaj wiek");
-            int age = input.nextInt();
-            input.nextLine();
-            System.out.println("Podaj pesel");
-            String pesel = input.nextLine();
-            Person person = new Person(firstName, lastName, age, pesel);
-            System.out.println(person);
-        } catch (NameUndefinedException | IncorrectAgeException ex) {
-            System.err.println(ex.getMessage());
+        Person person1 = new Person();
+        System.out.println("Podaj imię");
+        person1.setFirstName(input.nextLine());
+        System.out.println("Podaj nazwisko");
+        person1.setLastName(input.nextLine());
+        System.out.println("Podaj wiek");
+        person1.setAge(input.nextInt());
+        input.nextLine();
+        System.out.println("Podaj pesel");
+        person1.setPesel(input.nextLine());
+        try {
+            person1.getFirstName();
+            person1.getLastName();
+            person1.getAge();
+        } finally {
+            System.out.println(person1);
         }
     }
 }
