@@ -5,17 +5,10 @@ class Person {
     private String pesel;
 
     public Person(String firstName, String lastName, int age, String pesel) throws NameUndefinedException, IncorrectAgeException {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.pesel = pesel;
-        try {
-            setFirstName(firstName);
-            setLastName(lastName);
-            setAge(age);
-        } catch (NameUndefinedException | IncorrectAgeException ex) {
-            ex.getMessage();
-        }
+        setFirstName(firstName);
+        setLastName(lastName);
+        setAge(age);
+        setPesel(pesel);
     }
 
     public String getFirstName() {
@@ -23,10 +16,10 @@ class Person {
     }
 
     public void setFirstName(String firstName) throws NameUndefinedException {
-        this.firstName = firstName;
         if (firstName == null || firstName.length() < 2) {
             throw new NameUndefinedException();
         }
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -34,10 +27,10 @@ class Person {
     }
 
     public void setLastName(String lastName) throws NameUndefinedException {
-        this.lastName = lastName;
         if (lastName == null || lastName.length() < 2) {
             throw new NameUndefinedException();
         }
+        this.lastName = lastName;
     }
 
     public int getAge() {
@@ -45,10 +38,10 @@ class Person {
     }
 
     public void setAge(int age) throws IncorrectAgeException {
-        this.age = age;
         if (age < 1) {
             throw new IncorrectAgeException();
         }
+        this.age = age;
     }
 
     public String getPesel() {
