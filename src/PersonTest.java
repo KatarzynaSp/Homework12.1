@@ -3,23 +3,16 @@ import java.util.Scanner;
 public class PersonTest {
     public static void main(String[] args) throws NameUndefinedException, IncorrectAgeException {
         Scanner input = new Scanner(System.in);
-
-        Person person1 = new Person();
+        Person person = new Person("imię", "nazwsko", 1, "pesel");
         System.out.println("Podaj imię");
-        person1.setFirstName(input.nextLine());
+        person.setFirstName(input.nextLine());
         System.out.println("Podaj nazwisko");
-        person1.setLastName(input.nextLine());
+        person.setLastName(input.nextLine());
         System.out.println("Podaj wiek");
-        person1.setAge(input.nextInt());
+        person.setAge(input.nextInt());
         input.nextLine();
         System.out.println("Podaj pesel");
-        person1.setPesel(input.nextLine());
-        try {
-            person1.getFirstName();
-            person1.getLastName();
-            person1.getAge();
-        } finally {
-            System.out.println(person1);
-        }
+        person.setPesel(input.nextLine());
+        System.out.println(person);
     }
 }

@@ -1,5 +1,5 @@
 class NameUndefinedException extends Exception {
     NameUndefinedException() {
-        super("Imię i nazwisko musi być dłuższe niż dwa znaki.");
+        super("Imię i nazwisko nie może mieć mniej niż 2 znaki.");
     }
 }
