@@ -1,0 +1,7 @@
+Treść zadania
+Napisz program, w którym stworzysz klasę Person(firstName, lastName, age, pesel).
+
+Utwórz klasy wyjątków:
+* NameUndefinedException – wyjątek, który powinien być rzucony, jeśli ktoś przy próbie utworzenia obiektu Person przekaże do konstruktora imię lub nazwisko będące nullem lub mające mniej niż 2 znaki. Wyjątek powinien być także rzucony, gdy ktoś spróbuje zmienić imię lub nazwisko na wartość null, albo napis zawierający mniej niż 2 znaki.
+* IncorrectAgeException – wyjątek, który powinien być rzucony, jeśli ktoś przy próbie utworzenia obiektu Person przekaże do konstruktora wiek mniejszy niż 1. Wyjątek powinien być także rzucony przy próbie zmiany wieku w istniejącym wieku na wartość mniejszą niż 1.
+Dodaj obsługę wyjątków w bloku try-catch. Po uruchomieniu wcześniejszych fragmentów kodu w konsoli powinien pojawić się czytelny wydruk z informacją dla użytkownika aplikacji, 
